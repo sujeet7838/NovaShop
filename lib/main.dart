@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:novashop/screen/auth_ui/login/login.dart';
+import 'package:novashop/constants/theme.dart';
+import 'package:novashop/screen/welcome/welcome.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,10 +10,11 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'NovaShop',
-      home: Login(),
+      theme: themeData,
+      home: const Welcome(),
     );
   }
 }
