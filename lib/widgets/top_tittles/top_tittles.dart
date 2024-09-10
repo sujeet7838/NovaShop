@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TopTitles extends StatelessWidget {
-  final String title, subTittle;
-
-  const TopTitles({super.key, required this.title, required this.subTittle});
+  final String title, subtitle;
+  const TopTitles({super.key, required this.subtitle, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,7 @@ class TopTitles extends StatelessWidget {
           height: 12,
         ),
         Text(
-          subTittle,
+          subtitle,
           style: const TextStyle(
             fontSize: 18.0,
           ),

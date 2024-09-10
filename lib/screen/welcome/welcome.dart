@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:novashop/constants/asset_images.dart';
 import 'package:novashop/constants/routes,dart';
@@ -13,62 +12,64 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: SingleChildScrollView(
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const TopTitles(
-              title: "Welcome",
-              subTittle: "Buy any item from using app",
+                subtitle: "Buy AnyItems From Using App ", title: "Welcome"),
+            Center(
+              child: Image.asset(
+                AssetsImages.instance.welcomeImage,
+              ),
             ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     CupertinoButton(
+            //       onPressed: () {},
+            //       padding: EdgeInsets.zero,
+            //       child: const Icon(
+            //         Icons.facebook,
+            //         size: 35,
+            //         color: Colors.blue,
+            //       ),
+            //     ),
+            //     const SizedBox(
+            //       width: 12.0,
+            //     ),
+            //     CupertinoButton(
+            //       onPressed: () {},
+            //       padding: EdgeInsets.zero,
+            //       child: Image.asset(
+            //         AssetsImages.instance.googleLogo,
+            //         scale: 30.0,
+            //       ),
+            //     ),
+            //   ],
+            // ),
             const SizedBox(
-              height: 12,
+              height: 30.0,
             ),
-            Center(child: Image.asset(AssetsImages.instance.welcomeImages)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CupertinoButton(
-                  onPressed: () {},
-                  padding: EdgeInsets.zero,
-                  child: const Icon(
-                    Icons.facebook,
-                    color: Colors.blue,
-                    size: 35.0,
-                  ),
-                ),
-                const SizedBox(
-                  width: 12.0,
-                ),
-                CupertinoButton(
-                  onPressed: () {},
-                  padding: EdgeInsets.zero,
-                  child: Image.asset(
-                    AssetsImages.instance.googleLogo,
-                    scale: 30.0,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 18.0),
             PrimaryButton(
-              tittle: "Login",
+              title: "Login",
               onPressed: () {
                 Routes.instance.push(widget: const Login(), context: context);
               },
             ),
-            const SizedBox(height: 18.0),
+            const SizedBox(
+              height: 18.0,
+            ),
             PrimaryButton(
-              tittle: "Sign Up",
+              title: "Sign Up",
               onPressed: () {
-                Routes.instance.push(widget: const SiginUp(), context: context);
+                Routes.instance.push(widget: const SignUp(), context: context);
               },
             ),
           ],
         ),
       ),
-    ));
+    );
   }
 }
