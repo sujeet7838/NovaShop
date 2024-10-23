@@ -1,7 +1,10 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:novashop/screen/account/account.dart';
+import 'package:novashop/screen/cart/cart.dart';
 import 'package:novashop/screen/home/homePage.dart';
+import 'package:novashop/screen/order/order.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class CustomBottomBar extends StatefulWidget {
@@ -19,9 +22,9 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
 
   List<Widget> _buildScreens() => [
         const Home(),
-        // const CartScreen(),
-        // const OrderScreen(),
-        // const AccountScreen(),
+        const CartScreen(),
+        const OrderScreen(),
+        const AccountScreen(),
       ];
 
   List<PersistentBottomNavBarItem> _navBarsItems() => [
@@ -69,8 +72,10 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
           bottomScreenMargin: 0,
 
           backgroundColor: Theme.of(context).primaryColor,
-          // hideNavigationBar: _hideNavBar,
-          // decoration: const NavBarDecoration(colorBehindNavBar: Colors.indigo),
+          //hideNavigationBar: _hideNavBar,
+
+          decoration: const NavBarDecoration(colorBehindNavBar: Colors.indigo),
+
           // itemAnimationProperties: const ItemAnimationProperties(
           //   duration: Duration(milliseconds: 400),
           //   curve: Curves.ease,

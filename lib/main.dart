@@ -4,6 +4,7 @@ import 'package:novashop/constants/theme.dart';
 import 'package:novashop/firebase_helper/firebase_auth_helper/firebase_auth_helper.dart';
 import 'package:novashop/firebase_helper/firebase_options/firebase_options.dart';
 import 'package:novashop/provider/app_provider.dart';
+import 'package:novashop/screen/custom_bottom_bar/custom_bottom_bar.dart';
 import 'package:novashop/screen/welcome/welcome.dart';
 import 'package:provider/provider.dart';
 
@@ -31,9 +32,9 @@ class MyApp extends StatelessWidget {
         home: StreamBuilder(
           stream: FirebaseAuthHelper.instance.getAuthChange,
           builder: (context, snapshot) {
-            // if (snapshot.hasData) {
-            //   return const CustomBottomBar();
-            // }
+            if (snapshot.hasData) {
+              return const CustomBottomBar();
+            }
             return const Welcome();
           },
         ),
